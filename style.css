@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Palette+Mosaic&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lobster', cursive;
+}
+::selection{
+    color: #fff;
+    background: #56baed;
+}
+body{
+    background: url(bgimg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* working on select box  */
+.selectbox, .playboard, .resultbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+}
+ .selectbox{
+    background: rgb(117, 177, 117);
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+} 
+.selectbox.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+.selectbox header{
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+.selectbox .title{
+    font-size: 22px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.selectbox .option{
+    display: flex;
+    width: 100%;
+}
+.option button{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    border:none;
+    background: #192c1f;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.option button:hover{
+    transform: scale(0.96);
+}
+.option button.pX{
+    margin-right: 5px;
+}
+.option button.pO{
+    margin-left: 5px;
+}
+
+/* working on playboard section  */
+.playboard{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.playboard.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%)scale(1);
+}
+.playboard .details{
+    padding: 7px;
+    border-radius: 5px;
+    background: #fff;
+}
+.playboard .players{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.players span{
+    position: relative;
+    z-index: 2;
+    color: #9dc09a;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    transition: all 0.3 ease;
+}
+.players.active span:first-child{
+    color: #fff;
+}
+.players.active span:last-child{
+    color: #89bb83;
+}
+.players span:first-child{
+    color: #fff;
+}
+.players .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #52c243;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.players.active .slider{
+    left: 50%;
+}
+.players.active span:first-child{
+    color: #55ce65;
+}
+.players.active span:nth-child(2){
+    color: #fff;
+}
+.players.active .slider{
+    left: 50%;
+}
+.playarea{
+    margin-top: 20px;
+}
+.playarea section{
+    display: flex;
+    margin-bottom: 1px;
+}
+.playarea section span{
+    display: block;
+    height: 90px;
+    width: 90px;
+    margin: 2px;
+    color: #4cc069;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+}
+
+/* working on result box  */
+.resultbox{
+    padding: 25px 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    background: #fff;
+    pointer-events: none;
+    transform: translate(-50%, -50%)scale(0.9);
+}
+.resultbox.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%)scale(1);
+}
+.resultbox .wontext{
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+.resultbox .wontext p{
+    font-weight: 600;
+    margin: 0 5px;
+}
+.resultbox .btn{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.btn button{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    background: #0f770f;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn button:hover{
+    transform: scale(0.96);
+}
+.selectbox .subs{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.selectbox .subs a{
+    color: #1b8d2a;
+    text-decoration: none;
+}
+.selectbox .subs a:hover{
+    text-decoration: underline;
+}
